@@ -1,10 +1,9 @@
 <template>
-  <div class=''>我是商品</div>
+  <div class=''>我是商家</div>
 </template>
 
 <script>
-export default {
-};
+export default {};
 </script>
 <style lang='stylus' scoped>
 </style>

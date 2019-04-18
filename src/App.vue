@@ -18,7 +18,7 @@
 
 <script>
 
-import Header from './components/Header/HeaderPart';
+import Header from '@/components/Header/HeaderPart';
 
 export default {
   name: 'app',
@@ -37,6 +37,10 @@ export default {
     .tab_item
       flex 1
       text-align center
-      a
-        text-decoration-line none
+      &a
+        font-size 14px
+        color rgb(77,85,93)
+        line-height 14px
+        &.active
+          color rgb(240,20,20)
 </style>

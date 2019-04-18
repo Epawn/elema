@@ -1,5 +1,5 @@
 <template>
-  <div class=''>我是商品</div>
+  <div class=''>我是评价</div>
 </template>
 
 <script>

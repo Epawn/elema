@@ -25,7 +25,7 @@ import App from './App';
 import router from './router';
 
 Vue.use(router);
-
+/* eslint-disable no-new */
 new Vue({
   router,
   template: '<App/>',
