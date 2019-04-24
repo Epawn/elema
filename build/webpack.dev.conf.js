@@ -33,7 +33,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           data: goods
         })
       })
-      router.get('/seller', (req, res) => {
+      router.get('/sellers', (req, res) => {
         res.json({
           errno: 0,
           data: seller

@@ -3,17 +3,22 @@ import Router from 'vue-router';
 import Goods from '@/components/Goods/Goods.vue';
 import Ratings from '@/components/Ratings/Ratings.vue';
 import Sellers from '@/components/Seller/Sellers.vue';
+
 Vue.use(Router);
 
 export default new Router({
+  linkActiveClass: 'active',
   routes: [
     {
-      path: '/goods',
-      name: 'goods',
+      path: '/', redirect: '/Goods'
+    },
+    {
+      path: '/Goods',
+      name: 'Goods',
       component: Goods
     }, {
       path: '/sellers',
-      name: 'sellers',
+      name: 'Sellers',
       component: Sellers
     }, {
       path: '/Ratings',

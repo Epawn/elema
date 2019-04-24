@@ -1,7 +1,30 @@
 <!--  -->
 <template>
   <div class='header'>
-    我是Header
+    <div class="content-wrap">
+      <div class="logo">
+        <img
+          width="64"
+          height="64"
+          :src='sellers.avatar'
+          alt="商家logo"
+        />
+      </div>
+      <div class="content">
+        <div class="title">
+          <span class="brand"></span>
+          <span class="name">{{sellers.name}}</span>
+        </div>
+        <div class="description">
+          {{sellers.description}}/{{sellers.deliveryTime}}分钟送达
+        </div>
+        <div class="supports">
+          <span v-if="sellers.supports">{{sellers.supports[0].description}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="notice">
+    </div>
   </div>
 </template>
 
@@ -9,44 +32,39 @@
 export default {
   // import引入的组件需要注入到对象中才能使用
   components: {},
-  data () {
-    // 这里存放数据
-    return {};
+  props: {
+    sellers: {
+      type: Object
+    }
   },
-  // 监听属性 类似于data概念
-  computed: {},
-  // 监控data中的数据变化
-  watch: {},
-  // 方法集合
-  methods: {},
-  // 生命周期 - 创建完成（可以访问当前this实例）
-  created () {},
-
-  // 生命周期 - 挂载完成（可以访问DOM元素）
-  mounted () {},
-
-  // 生命周期 - 创建之前
-  beforeCreate () {},
-
-  // 生命周期 - 挂载之前
-  beforeMount () {},
-
-  // 生命周期 - 更新之前
-  beforeUpdate () {},
-
-  // 生命周期 - 更新之后
-  updated () {},
-
-  // 生命周期 - 销毁之前
-  beforeDestroy () {},
-
-  // 生命周期 - 销毁完成
-  destroyed () {},
-
-  // 如果页面有keep-alive缓存功能，这个函数会触发
-  activated () {}
+  data() {
+    // 这里存放数据
+    return {
+      sellerData: this.sellers
+    };
+  }
 };
 </script>
-<style scoped>
-
+<style lang="stylus" scoped>
+@import '../../common/stylus/mixin.styl'
+  .header
+    background-color rgba(7,17,27,0.5)
+    color rgb(255,255,255)
+    .content-wrap
+      padding 24px 12px 18px 24px
+      font-size 0
+      .logo
+        display inline-block
+        & > img
+          border-radius 2px
+      .content
+        display inline-block
+        font-size 10px
+        .title
+          margin 2px 0 8px 16px
+          .brand
+            display inline-block
+            width 30px
+            height 18px
+            bg-img('brand')
 </style>
